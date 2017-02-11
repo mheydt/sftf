@@ -1,3 +1,48 @@
-#
-# azuredeploy_parameters.ps1
-#
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clusterLocation": {
+      "value": "West US"
+    },
+    "clusterName": {
+      "value": ""
+    },
+    "vmStorageAccountName": {
+      "value": ""
+    },
+    "adminUserName": {
+      "value": "YOURADMIN"
+    },
+    "adminPassword": {
+      "value": ""
+    },
+    "virtualNetworkName": {
+      "value": "vnet-ttdev01"
+    },
+    "dnsName": {
+      "value": "ttdev01"
+    },
+    "vmSize": {
+      "value": "Standard_D1"
+    },
+    "numberOfNodes": {
+      "value": 5
+    },
+    "clusterProtectionLevel": {
+      "value": "EncryptAndSign"
+    },
+    "certificateStoreValue": {
+      "value": "My"
+    },
+    "certificateThumbprint": {
+      "value": ""
+    },
+    "sourceVaultValue": {
+      "value": ""
+    },
+    "certificateUrlValue": {
+      "value": ""
+    }
+  }
+}

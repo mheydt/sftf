@@ -30,9 +30,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Compile Include="Script.ps1" />
+    <Content Include="azuredeploy-parameters.json" />
+    <Content Include="azuredeploy.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="grc_CreateSvcFabCluster.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
