@@ -1,0 +1,1 @@
+d:\SFTF\SFTF\obj\x64\Debug\SFTF.sfprojResolveAssemblyReference.cache
