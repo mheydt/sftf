@@ -3,13 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "SFTF", "SFTF\SFTF.sfproj", "{FB7B9C57-4E7D-4641-AC63-AC573D906BE4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldActor", "HelloWorldActor\HelloWorldActor.csproj", "{1FF87ED9-7774-494C-B4C5-45EEE19BE38F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldActor.Interfaces", "HelloWorldActor.Interfaces\HelloWorldActor.Interfaces.csproj", "{0A2A761E-B10C-49A7-8F87-3CD7FEE4ECCE}"
-EndProject
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "SFTF.PS", "SFTF.PS\SFTF.PS.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prez", "Prez", "{2972A9FC-79C1-4374-B235-61F271E2746A}"
+	ProjectSection(SolutionItems) = preProject
+		Prez\Service Fabric Hackathon.pptx = Prez\Service Fabric Hackathon.pptx
+	EndProjectSection
+EndProject
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "SFTF", "SFTF\SFTF.sfproj", "{86556BFB-7923-42FF-A0FE-E695B1D84AA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFTF.HelloWorldActor", "SFTF.HelloWorldActor\SFTF.HelloWorldActor.csproj", "{6BD49C5B-B812-4463-AED2-798B1F096DC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFTF.HelloWorldActor.Interfaces", "SFTF.HelloWorldActor.Interfaces\SFTF.HelloWorldActor.Interfaces.csproj", "{8F8BDD77-C153-4C7C-B72C-D3A0AFABFB03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFTF.HelloWorldActor.CLI", "SFTF.HelloWorldActor.CLI\SFTF.HelloWorldActor.CLI.csproj", "{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,26 +26,6 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FB7B9C57-4E7D-4641-AC63-AC573D906BE4}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{FB7B9C57-4E7D-4641-AC63-AC573D906BE4}.Debug|x64.ActiveCfg = Debug|x64
-		{FB7B9C57-4E7D-4641-AC63-AC573D906BE4}.Debug|x64.Build.0 = Debug|x64
-		{FB7B9C57-4E7D-4641-AC63-AC573D906BE4}.Debug|x64.Deploy.0 = Debug|x64
-		{FB7B9C57-4E7D-4641-AC63-AC573D906BE4}.Release|Any CPU.ActiveCfg = Release|x64
-		{FB7B9C57-4E7D-4641-AC63-AC573D906BE4}.Release|x64.ActiveCfg = Release|x64
-		{FB7B9C57-4E7D-4641-AC63-AC573D906BE4}.Release|x64.Build.0 = Release|x64
-		{FB7B9C57-4E7D-4641-AC63-AC573D906BE4}.Release|x64.Deploy.0 = Release|x64
-		{1FF87ED9-7774-494C-B4C5-45EEE19BE38F}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{1FF87ED9-7774-494C-B4C5-45EEE19BE38F}.Debug|x64.ActiveCfg = Debug|x64
-		{1FF87ED9-7774-494C-B4C5-45EEE19BE38F}.Debug|x64.Build.0 = Debug|x64
-		{1FF87ED9-7774-494C-B4C5-45EEE19BE38F}.Release|Any CPU.ActiveCfg = Release|x64
-		{1FF87ED9-7774-494C-B4C5-45EEE19BE38F}.Release|x64.ActiveCfg = Release|x64
-		{1FF87ED9-7774-494C-B4C5-45EEE19BE38F}.Release|x64.Build.0 = Release|x64
-		{0A2A761E-B10C-49A7-8F87-3CD7FEE4ECCE}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{0A2A761E-B10C-49A7-8F87-3CD7FEE4ECCE}.Debug|x64.ActiveCfg = Debug|x64
-		{0A2A761E-B10C-49A7-8F87-3CD7FEE4ECCE}.Debug|x64.Build.0 = Debug|x64
-		{0A2A761E-B10C-49A7-8F87-3CD7FEE4ECCE}.Release|Any CPU.ActiveCfg = Release|x64
-		{0A2A761E-B10C-49A7-8F87-3CD7FEE4ECCE}.Release|x64.ActiveCfg = Release|x64
-		{0A2A761E-B10C-49A7-8F87-3CD7FEE4ECCE}.Release|x64.Build.0 = Release|x64
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -47,26 +34,36 @@ Global
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|x64.ActiveCfg = Release|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|x64.Build.0 = Release|Any CPU
+		{86556BFB-7923-42FF-A0FE-E695B1D84AA6}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{86556BFB-7923-42FF-A0FE-E695B1D84AA6}.Debug|x64.ActiveCfg = Debug|x64
+		{86556BFB-7923-42FF-A0FE-E695B1D84AA6}.Debug|x64.Build.0 = Debug|x64
+		{86556BFB-7923-42FF-A0FE-E695B1D84AA6}.Debug|x64.Deploy.0 = Debug|x64
+		{86556BFB-7923-42FF-A0FE-E695B1D84AA6}.Release|Any CPU.ActiveCfg = Release|x64
+		{86556BFB-7923-42FF-A0FE-E695B1D84AA6}.Release|x64.ActiveCfg = Release|x64
+		{86556BFB-7923-42FF-A0FE-E695B1D84AA6}.Release|x64.Build.0 = Release|x64
+		{86556BFB-7923-42FF-A0FE-E695B1D84AA6}.Release|x64.Deploy.0 = Release|x64
+		{6BD49C5B-B812-4463-AED2-798B1F096DC2}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{6BD49C5B-B812-4463-AED2-798B1F096DC2}.Debug|x64.ActiveCfg = Debug|x64
+		{6BD49C5B-B812-4463-AED2-798B1F096DC2}.Debug|x64.Build.0 = Debug|x64
+		{6BD49C5B-B812-4463-AED2-798B1F096DC2}.Release|Any CPU.ActiveCfg = Release|x64
+		{6BD49C5B-B812-4463-AED2-798B1F096DC2}.Release|x64.ActiveCfg = Release|x64
+		{6BD49C5B-B812-4463-AED2-798B1F096DC2}.Release|x64.Build.0 = Release|x64
+		{8F8BDD77-C153-4C7C-B72C-D3A0AFABFB03}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{8F8BDD77-C153-4C7C-B72C-D3A0AFABFB03}.Debug|x64.ActiveCfg = Debug|x64
+		{8F8BDD77-C153-4C7C-B72C-D3A0AFABFB03}.Debug|x64.Build.0 = Debug|x64
+		{8F8BDD77-C153-4C7C-B72C-D3A0AFABFB03}.Release|Any CPU.ActiveCfg = Release|x64
+		{8F8BDD77-C153-4C7C-B72C-D3A0AFABFB03}.Release|x64.ActiveCfg = Release|x64
+		{8F8BDD77-C153-4C7C-B72C-D3A0AFABFB03}.Release|x64.Build.0 = Release|x64
+		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Debug|x64.Build.0 = Debug|Any CPU
+		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Release|x64.ActiveCfg = Release|Any CPU
+		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://microtradingservices.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = HelloWorldActor.Interfaces\\HelloWorldActor.Interfaces.csproj
-		SccProjectName1 = HelloWorldActor.Interfaces
-		SccLocalPath1 = HelloWorldActor.Interfaces
-		SccProjectUniqueName2 = HelloWorldActor\\HelloWorldActor.csproj
-		SccProjectName2 = HelloWorldActor
-		SccLocalPath2 = HelloWorldActor
-		SccProjectUniqueName3 = SFTF\\SFTF.sfproj
-		SccProjectName3 = SFTF
-		SccLocalPath3 = SFTF
-		SccProjectUniqueName4 = SFTF.PS\\SFTF.PS.pssproj
-		SccProjectName4 = SFTF.PS
-		SccLocalPath4 = SFTF.PS
 	EndGlobalSection
 EndGlobal
