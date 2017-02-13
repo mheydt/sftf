@@ -1,7 +1,4 @@
 ##############################################################################
-# Author : Gonzalo Ruiz - Cloud Architect 
-#  For more info : www.gonzowins.com
-# Date   : 28/06/2015
 #
 # This script creates a Service Fabric Cluster in Azure and the related objects
 # like  :
@@ -165,17 +162,14 @@ function ValidateClusterConnection()
     Write-Output "Common Name : $dnsName"
 }
 
-##### Optional : Register ServiceFabric Provider
-# Register-AzureRmResourceProvider -ProviderNamespace Microsoft.ServiceFabric -Force
-# Register-AzureRmResourceProvider -ProviderNamespace Microsoft.KeyVault -Force
-
 clear
 
 ##### Parameters - ResourceGroup & KeyVault
 $instanceNumber = (Get-Date -format ddMMyy) + "01"
 
 $location = 'westus'
-$currentLocation = Get-Location
+#$currentLocation = Get-Location
+$currentLocation = "D:\SFTF\SFTF.PS"
 
 ##### Parameters - Names
 $dnsName = "YOURNAME$instanceNumber"
@@ -192,11 +186,15 @@ $secretName = 'ServiceFabricCert'
 $templateFileLocation = "$currentLocation\azuredeploy.json"
 $parametersFileLocation = "$currentLocation\azuredeploy-parameters.json"
 
+#$certificatePassword = ConvertTo-SecureString "mycertpwd"
+
 if($certificatePassword -eq $null) {
     $certificatePassword = Read-Host -Prompt "Enter password" -AsSecureString 
     $clearPassword = (New-Object System.Management.Automation.PSCredential 'N/A', $certificatePassword).GetNetworkCredential().Password    
 }
 
+
+Login-AzureRmAccount
 
 ######## STEP 1  : Create And Setup Certificates
 $clusterCertificate = SetupCertificates
@@ -214,7 +212,7 @@ Write-Host $clusterParameters
 ####### STEP 5 : Create Service Fabric Cluster #####################
 $validation = Test-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName `
                                                   -TemplateFile $templateFileLocation -TemplateParameterObject $clusterParameters 
-    
+
 if($validation.Count -eq 0)
 {
         New-AzureRmResourceGroupDeployment  -Name $deploymentName -ResourceGroupName $resourceGroupName `
