@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="SFTFType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
+    <Parameter Name="HelloWorldActorWebAPI_InstanceCount" DefaultValue="-1" />
     <Parameter Name="HelloWorldActorService_PartitionCount" DefaultValue="10" />
     <Parameter Name="HelloWorldActorService_MinReplicaSetSize" DefaultValue="3" />
     <Parameter Name="HelloWorldActorService_TargetReplicaSetSize" DefaultValue="3" />
@@ -9,9 +10,18 @@
        should match the Name and Version attributes of the ServiceManifest element defined in the 
        ServiceManifest.xml file. -->
   <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="HelloWorldActorWebAPIPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="SFTF.HelloWorldActorPkg" ServiceManifestVersion="1.0.0" />
   </ServiceManifestImport>
   <DefaultServices>
+    <Service Name="HelloWorldActorWebAPI">
+      <StatelessService ServiceTypeName="HelloWorldActorWebAPIType" InstanceCount="[HelloWorldActorWebAPI_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
     <Service Name="HelloWorldActorService" GeneratedIdRef="d1ade88d-0e71-4944-868b-c3d27b7341b9|Persisted">
       <StatefulService ServiceTypeName="HelloWorldActorServiceType" TargetReplicaSetSize="[HelloWorldActorService_TargetReplicaSetSize]" MinReplicaSetSize="[HelloWorldActorService_MinReplicaSetSize]">
         <UniformInt64Partition PartitionCount="[HelloWorldActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
