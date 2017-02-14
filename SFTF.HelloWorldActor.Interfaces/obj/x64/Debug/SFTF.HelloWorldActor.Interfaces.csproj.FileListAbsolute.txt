@@ -33,6 +33,5 @@ C:\Users\miheydt\Source\Repos\sftf\SFTF.HelloWorldActor.Interfaces\bin\x64\Debug
 C:\Users\miheydt\Source\Repos\sftf\SFTF.HelloWorldActor.Interfaces\bin\x64\Debug\Microsoft.ServiceFabric.Data.Interfaces.xml
 C:\Users\miheydt\Source\Repos\sftf\SFTF.HelloWorldActor.Interfaces\bin\x64\Debug\Microsoft.ServiceFabric.Services.xml
 C:\Users\miheydt\Source\Repos\sftf\SFTF.HelloWorldActor.Interfaces\bin\x64\Debug\System.Fabric.xml
-C:\Users\miheydt\Source\Repos\sftf\SFTF.HelloWorldActor.Interfaces\obj\x64\Debug\SFTF.HelloWorldActor.Interfaces.csprojResolveAssemblyReference.cache
 C:\Users\miheydt\Source\Repos\sftf\SFTF.HelloWorldActor.Interfaces\obj\x64\Debug\SFTF.HelloWorldActor.Interfaces.dll
 C:\Users\miheydt\Source\Repos\sftf\SFTF.HelloWorldActor.Interfaces\obj\x64\Debug\SFTF.HelloWorldActor.Interfaces.pdb
