@@ -16,8 +16,6 @@ namespace SFTF.HelloWorldActor.CLI
 
         static void Main(string[] args)
         {
-            Console.WriteLine("HI Again!");
-
             var actor = ActorProxy.Create<IHelloWorldActor>(new ActorId(0), new Uri(_serviceURI));
 
             var cts = new CancellationTokenSource();
