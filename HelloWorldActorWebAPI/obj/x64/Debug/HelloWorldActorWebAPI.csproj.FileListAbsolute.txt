@@ -4,6 +4,7 @@ C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\HelloWorl
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.Owin.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.Owin.Host.HttpListener.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.Owin.Hosting.dll
+C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.ServiceFabric.Actors.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.ServiceFabric.Data.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.ServiceFabric.Data.Interfaces.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.ServiceFabric.Internal.dll
@@ -12,14 +13,17 @@ C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Owin.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\ServiceFabricServiceModel.dll
+C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\SFTF.HelloWorldActor.Interfaces.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\System.Fabric.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\System.Fabric.Strings.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\System.Net.Http.Formatting.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\System.Web.Http.dll
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\System.Web.Http.Owin.dll
+C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\SFTF.HelloWorldActor.Interfaces.pdb
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.Owin.xml
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.Owin.Host.HttpListener.xml
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.Owin.Hosting.xml
+C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.ServiceFabric.Actors.xml
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.ServiceFabric.Data.xml
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.ServiceFabric.Data.Interfaces.xml
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.ServiceFabric.Services.xml
@@ -31,7 +35,4 @@ C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\System.We
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\obj\x64\Debug\HelloWorldActorWebAPI.csprojResolveAssemblyReference.cache
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\obj\x64\Debug\HelloWorldActorWebAPI.exe
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\obj\x64\Debug\HelloWorldActorWebAPI.pdb
-C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.ServiceFabric.Actors.dll
-C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\SFTF.HelloWorldActor.Interfaces.dll
-C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\SFTF.HelloWorldActor.Interfaces.pdb
-C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\Microsoft.ServiceFabric.Actors.xml
+C:\Dev\sftf\HelloWorldActorWebAPI\obj\x64\Debug\HelloWorldActorWebAPI.csprojResolveAssemblyReference.cache

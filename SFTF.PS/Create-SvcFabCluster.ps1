@@ -1,31 +1,11 @@
-##############################################################################
-#
-# This script creates a Service Fabric Cluster in Azure and the related objects
-# like  :
-#          Certificates
-#          KeyVault
-#          Azure Objects - By using an ARM Template, the following objects will be created
-#                One VNET with two Subnets
-#                N - Number of VMS
-#                   Two extensions will be installed : Service Fabric and Diagnostics extensions
-#                N - Number of NICS
-#                One Public IP
-#                One Availability Set
-#                One Service Fabric Extension
-#          
-# Note : You will need privileges to create Service Fabric Clusters in Azure
-# 
-###############################################################################
-
 function SetupCertificates()
 {
  
     If (-not (Test-Path $certificateFilePath)){
         $newCer = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -DnsName $dnsName
         $newCer    | Export-PfxCertificate -FilePath $certificateFilePath -Password  $certificatePassword 
-
         
-        $newCer |Export-Certificate -FilePath $cerCertificateFilePath -Type CERT
+        $newCer | Export-Certificate -FilePath $cerCertificateFilePath -Type CERT
         ######## Set up the Certs
         #If this is a self signed cert, then add it to the Trusted People Store.Else skip.
         $importedCer = Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\TrustedPeople -FilePath $certificateFilePath -Password $certificatePassword
@@ -40,27 +20,21 @@ function SetupCertificates()
 
 function GetOrCreateKeyVault
 {
+    if (-not (Get-AzureRmResourceGroup | ? ResourceGroupName -eq $resourceGroupName))
+    {
+        $newResourceGroup = New-AzureRmResourceGroup  -Name $ResourceGroupName -Location $Location -Verbose 
+    }
     
-         if (-not (Get-AzureRmResourceGroup | ? ResourceGroupName -eq $resourceGroupName))
-        {
-            $newResourceGroup = New-AzureRmResourceGroup  -Name $ResourceGroupName -Location $Location -Verbose 
-        }
-
-        
-
-    
-        if( -not (Get-AzureRmKeyVault -ResourceGroupName $ResourceGroupName | ? VaultName -eq $VaultName ))
-        {
-            Write-Host "Creating vault $VaultName in $location (resource group $ResourceGroupName)"    
-            $keyVault = New-AzureRmKeyVault -VaultName $VaultName -ResourceGroupName $ResourceGroupName -Location $Location `
-                                            -EnabledForDeployment -Verbose  -Sku premium   
-            
-            
-        }
-        else 
-        {
-            $keyVault = Get-AzureRmKeyVault -VaultName $VaultName -ResourceGroupName $ResourceGroupName  
-        }        
+    if( -not (Get-AzureRmKeyVault -ResourceGroupName $ResourceGroupName | ? VaultName -eq $VaultName ))
+    {
+        Write-Host "Creating vault $VaultName in $location (resource group $ResourceGroupName)"    
+        $keyVault = New-AzureRmKeyVault -VaultName $VaultName -ResourceGroupName $ResourceGroupName -Location $Location `
+                                        -EnabledForDeployment -Verbose  -Sku premium   
+    }
+    else 
+    {
+        $keyVault = Get-AzureRmKeyVault -VaultName $VaultName -ResourceGroupName $ResourceGroupName  
+    }        
     
     $keyVault
 
@@ -78,37 +52,31 @@ function AddCertificateToKeyVault
      )
      $ErrorActionPreference = 'Stop'       
     
-   
-   
     if( -not (Get-AzureKeyVaultSecret   -VaultName $VaultName | ? Name -eq $secretName))
-      {
-                 
+    {
+        $bytes = [System.IO.File]::ReadAllBytes($PfxFilePath)
+        $base64 = [System.Convert]::ToBase64String($bytes)
 
-            $bytes = [System.IO.File]::ReadAllBytes($PfxFilePath)
-            $base64 = [System.Convert]::ToBase64String($bytes)
-            
+        $jsonBlob = @{
+            data = $base64
+            dataType = 'pfx'
+            password = $clearPassword
+        } | ConvertTo-Json
 
-            $jsonBlob = @{
-                data = $base64
-                dataType = 'pfx'
-                password = $clearPassword
-            } | ConvertTo-Json
+        $contentbytes = [System.Text.Encoding]::UTF8.GetBytes($jsonBlob)
+        $content = [System.Convert]::ToBase64String($contentbytes)
 
-            $contentbytes = [System.Text.Encoding]::UTF8.GetBytes($jsonBlob)
-            $content = [System.Convert]::ToBase64String($contentbytes)
-
-            $secretValue = ConvertTo-SecureString -String $content -AsPlainText -Force
+        $secretValue = ConvertTo-SecureString -String $content -AsPlainText -Force
      
-            Write-Host "Writing secret $SecretName to vault $VaultName"
-            $keyVaultSecret = Set-AzureKeyVaultSecret -VaultName $VaultName -Name $SecretName -SecretValue $secretValue -Verbose         
+        Write-Host "Writing secret $SecretName to vault $VaultName"
+        $keyVaultSecret = Set-AzureKeyVaultSecret -VaultName $VaultName -Name $SecretName -SecretValue $secretValue -Verbose         
      }
      else
      {
-      $keyVaultSecret = Get-AzureKeyVaultSecret -VaultName $VaultName -Name $SecretName
+		$keyVaultSecret = Get-AzureKeyVaultSecret -VaultName $VaultName -Name $SecretName
      }
 
     $keyVaultSecret
-
  }
 
 function SetClusterTemplateParameters()
@@ -118,7 +86,7 @@ function SetClusterTemplateParameters()
     $parameters = New-Object -TypeName hashtable 
     $jsonContent = Get-Content $parametersFileLocation  -Raw | ConvertFrom-Json 
     $jsonContent.parameters.psobject.Properties.Name `
-            |ForEach-Object {$parameters.Add($_ ,$jsonContent.parameters.$_.Value)}
+            | ForEach-Object {$parameters.Add($_ ,$jsonContent.parameters.$_.Value)}
     
     # Complete Parameters Values 
     $parameters["clusterLocation"] = $location
@@ -130,27 +98,21 @@ function SetClusterTemplateParameters()
     $parameters["vmStorageAccountName"] = $dnsName+"stg"
     $parameters["clusterName"] = $dnsName
 
-
-    
     $parameters
 }
 
-
-
 function ValidateClusterConnection()
 {
-
-      Start-Sleep -Seconds 120    
-      
+    Start-Sleep -Seconds 120    
 
     $connectionEndpoint = "$dnsName.$location.cloudapp.azure.com:19000"
     Connect-serviceFabricCluster -ConnectionEndpoint $connectionEndpoint -KeepAliveIntervalInSec 10 `
-    -X509Credential `
-    -ServerCertThumbprint $clusterCertificate.Thumbprint  `
-    -FindType FindByThumbprint `
-    -FindValue $clusterCertificate.Thumbprint  `
-    -StoreLocation CurrentUser `
-    -StoreName My
+		-X509Credential `
+		-ServerCertThumbprint $clusterCertificate.Thumbprint  `
+		-FindType FindByThumbprint `
+		-FindValue $clusterCertificate.Thumbprint  `
+		-StoreLocation CurrentUser `
+		-StoreName My
 
     ##### Get cluster health and other checks    
     Get-ServiceFabricNode | Format-Table -AutoSize
@@ -167,49 +129,54 @@ clear
 ##### Parameters - ResourceGroup & KeyVault
 $instanceNumber = (Get-Date -format ddMMyy) + "01"
 
+#azure region
 $location = 'westus'
-#$currentLocation = Get-Location
-$currentLocation = "D:\SFTF\SFTF.PS"
 
-##### Parameters - Names
-$dnsName = "YOURNAME$instanceNumber"
-$resourceGroupName = "YOURRESOURCEGROUP$instanceNumber"
-$deploymentName ="svcfabcluster-Initial"
+# location of where you want cert files placed
+$currentLocation = "c:\dev\SFTF\SFTF.PS"
+$yourResourceGroup = "sfhackrg"
+
+$dnsName = "sfhack" # $yourName # + $instanceNumber
+$resourceGroupName = $yourResourceGroup # + $instanceNumber
+$deploymentName = "svcfabcluster-Initial"
 
 ##### Parameters - Certificates & Security
 $certificateFilePath = "$currentLocation\$dnsName.pfx"
 $cerCertificateFilePath = "$currentLocation\$dnsName.cer"
-$vaultName = "srvfabdev$instanceNumber"
+$vaultName = "sfhackvault" #$instanceNumber"
 $secretName = 'ServiceFabricCert'
 
 ##### Templates Location 
 $templateFileLocation = "$currentLocation\azuredeploy.json"
 $parametersFileLocation = "$currentLocation\azuredeploy-parameters.json"
 
-#$certificatePassword = ConvertTo-SecureString "mycertpwd"
+##### Certifate password
+$certificatePassword = ConvertTo-SecureString -String "ThePassword!1234" -Force -AsPlainText
 
-if($certificatePassword -eq $null) {
+if ($certificatePassword -eq $null) {
     $certificatePassword = Read-Host -Prompt "Enter password" -AsSecureString 
-    $clearPassword = (New-Object System.Management.Automation.PSCredential 'N/A', $certificatePassword).GetNetworkCredential().Password    
 }
+$clearPassword = (New-Object System.Management.Automation.PSCredential 'N/A', $certificatePassword).GetNetworkCredential().Password    
 
-
-Login-AzureRmAccount
-
-######## STEP 1  : Create And Setup Certificates
+######## Create And Setup Certificates
 $clusterCertificate = SetupCertificates
+Write-Host $clusterCertificate[2].Thumbprint
+Login-AzureRmAccount
+#Add-AzureRmAccount
 
-######## STEP 2 : Create ResourceGroup & KeyVault #####################
+######## Create ResourceGroup & KeyVault #####################
 $keyVault = GetOrCreateKeyVault
+Write-Host $keyVault.ResourceId
 
-######## STEP 3 : Upload the Certificates to Key Vault #####################
+######## Upload the Certificates to Key Vault #####################
 $keyVaultSecret = AddCertificateToKeyVault -ResourceGroupName $resourceGroupName -Location $location -VaultName $vaultName -SecretName $secretName -PfxFilePath $certificateFilePath -Password $certificatePassword
+Write-Host $keyVaultSecret.Id
 
-####### STEP 4 : Retrieve and Print Cluster Parameters #####################
+####### Retrieve and Print Cluster Parameters #####################
 $clusterParameters = SetClusterTemplateParameters
 Write-Host $clusterParameters
 
-####### STEP 5 : Create Service Fabric Cluster #####################
+####### Create Service Fabric Cluster #####################
 $validation = Test-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName `
                                                   -TemplateFile $templateFileLocation -TemplateParameterObject $clusterParameters 
 

@@ -2,7 +2,7 @@
 # Create_Certificates.ps1
 #
 
-$location = "c:\"
+$location = "C:\dev\sftf.ps"
 #$location = $currentLocation
 $dnsName = "foo.heydt.org"
 $certificateFilePath = "$location\$dnsName.pfx"
@@ -23,6 +23,7 @@ If (-not (Test-Path $certificateFilePath)){
     $importedCer = Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My -FilePath $certificateFilePath -Password $certificatePassword
 
 }    
-$clusterCertificates = new-object System.Security.Cryptography.X509Certificates.X509Certificate2 $certificateFilePath, $certificatePassword
-$clusterCertificates
+
+#$clusterCertificates = new-object System.Security.Cryptography.X509Certificates.X509Certificate2 $certificateFilePath, $certificatePassword
+#$clusterCertificates
 

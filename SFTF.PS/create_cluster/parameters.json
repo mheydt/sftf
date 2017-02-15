@@ -1,0 +1,114 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "clusterLocation": {
+            "value": "westus"
+        },
+        "clusterName": {
+            "value": "sfhack"
+        },
+        "nt0applicationStartPort": {
+            "value": 20000
+        },
+        "nt0applicationEndPort": {
+            "value": 30000
+        },
+        "nt0ephemeralStartPort": {
+            "value": 49152
+        },
+        "nt0ephemeralEndPort": {
+            "value": 65534
+        },
+        "nt0fabricTcpGatewayPort": {
+            "value": 19000
+        },
+        "nt0fabricHttpGatewayPort": {
+            "value": 19080
+        },
+        "subnet0Name": {
+            "value": "Subnet-0"
+        },
+        "subnet0Prefix": {
+            "value": "10.0.0.0/24"
+        },
+        "computeLocation": {
+            "value": "westus"
+        },
+        "vmStorageAccountName": {
+            "value": "sfvmsfhack5041"
+        },
+        "publicIPAddressName": {
+            "value": "sfhack-PubIP"
+        },
+        "publicIPAddressType": {
+            "value": "Dynamic"
+        },
+        "vmStorageAccountContainerName": {
+            "value": "vhds"
+        },
+        "adminUserName": {
+            "value": "mike"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "virtualNetworkName": {
+            "value": "VNet-sfhack"
+        },
+        "addressPrefix": {
+            "value": "10.0.0.0/16"
+        },
+        "dnsName": {
+            "value": "sfhack"
+        },
+        "nicName": {
+            "value": "NIC-sfhack"
+        },
+        "lbName": {
+            "value": "LB-sfhack"
+        },
+        "lbIPName": {
+            "value": "LBIP-sfhack"
+        },
+        "overProvision": {
+            "value": "false"
+        },
+        "vmImagePublisher": {
+            "value": "MicrosoftWindowsServer"
+        },
+        "vmImageOffer": {
+            "value": "WindowsServer"
+        },
+        "vmImageSku": {
+            "value": "2012-R2-Datacenter"
+        },
+        "vmImageVersion": {
+            "value": "latest"
+        },
+        "storageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "supportLogStorageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "supportLogStorageAccountName": {
+            "value": "sflogssfhack4990"
+        },
+        "applicationDiagnosticsStorageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "applicationDiagnosticsStorageAccountName": {
+            "value": "sfdgsfhack2058"
+        },
+        "nt0InstanceCount": {
+            "value": 5
+        },
+        "vmNodeType0Name": {
+            "value": "nodetype1"
+        },
+        "vmNodeType0Size": {
+            "value": "Standard_D1_v2"
+        }
+    }
+}
