@@ -35,3 +35,4 @@ C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\bin\x64\Debug\System.We
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\obj\x64\Debug\HelloWorldActorWebAPI.csprojResolveAssemblyReference.cache
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\obj\x64\Debug\HelloWorldActorWebAPI.exe
 C:\Users\miheydt\Source\Repos\sftf\HelloWorldActorWebAPI\obj\x64\Debug\HelloWorldActorWebAPI.pdb
+C:\Dev\sftf\HelloWorldActorWebAPI\obj\x64\Debug\HelloWorldActorWebAPI.csprojResolveAssemblyReference.cache

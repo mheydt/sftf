@@ -7,6 +7,7 @@ Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "SFTF.PS", "SFTF.PS\SFTF.PS.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prez", "Prez", "{2972A9FC-79C1-4374-B235-61F271E2746A}"
 	ProjectSection(SolutionItems) = preProject
+		Prez\Secure Service Fabric with AAD.pptx = Prez\Secure Service Fabric with AAD.pptx
 		Prez\Service Fabric Hackathon.pptx = Prez\Service Fabric Hackathon.pptx
 	EndProjectSection
 EndProject
@@ -17,8 +18,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFTF.HelloWorldActor.Interfaces", "SFTF.HelloWorldActor.Interfaces\SFTF.HelloWorldActor.Interfaces.csproj", "{8F8BDD77-C153-4C7C-B72C-D3A0AFABFB03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFTF.HelloWorldActor.CLI", "SFTF.HelloWorldActor.CLI\SFTF.HelloWorldActor.CLI.csproj", "{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldActorWebAPI", "HelloWorldActorWebAPI\HelloWorldActorWebAPI.csproj", "{62B8325C-A6DA-4DB9-8A57-CC16CE03E5CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,12 +63,6 @@ Global
 		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Release|x64.ActiveCfg = Release|Any CPU
 		{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}.Release|x64.Build.0 = Release|Any CPU
-		{62B8325C-A6DA-4DB9-8A57-CC16CE03E5CD}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{62B8325C-A6DA-4DB9-8A57-CC16CE03E5CD}.Debug|x64.ActiveCfg = Debug|x64
-		{62B8325C-A6DA-4DB9-8A57-CC16CE03E5CD}.Debug|x64.Build.0 = Debug|x64
-		{62B8325C-A6DA-4DB9-8A57-CC16CE03E5CD}.Release|Any CPU.ActiveCfg = Release|x64
-		{62B8325C-A6DA-4DB9-8A57-CC16CE03E5CD}.Release|x64.ActiveCfg = Release|x64
-		{62B8325C-A6DA-4DB9-8A57-CC16CE03E5CD}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
