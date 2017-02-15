@@ -33,12 +33,29 @@
   <ItemGroup>
     <Content Include="azuredeploy-parameters.json" />
     <Content Include="azuredeploy.json" />
+    <Content Include="create_cluster\deploy-preview.sh" />
+    <Content Include="create_cluster\deploy.sh" />
+    <Content Include="create_cluster\deployer.rb" />
+    <Content Include="create_cluster\DeploymentHelper.cs" />
+    <Content Include="create_cluster\parameters.json" />
+    <Content Include="create_cluster\template.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Create-Certificates.ps1" />
     <Compile Include="Create-KeyVault.ps1" />
+    <Compile Include="Create-ServicePrincipal1.ps1" />
     <Compile Include="Create-SvcFabCluster.ps1" />
-    <Compile Include="Delete-ServiceFabricCluster.ps1" />
+    <Compile Include="create_cluster\deploy.ps1" />
+    <Compile Include="dir\Create-CertAndKV.ps1" />
+    <Compile Include="dir\common.ps1" />
+    <Compile Include="dir\Do-SetupApplications.ps1" />
+    <Compile Include="dir\Setup-Applications2.ps1" />
+    <Compile Include="dir\Setup-Applications.ps1" />
+    <Compile Include="Get-AzureSubs.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="create_cluster\" />
+    <Folder Include="dir\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />

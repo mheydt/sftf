@@ -29,7 +29,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HelloWorldActorWebAPI\HelloWorldActorWebAPI.csproj" />
     <ProjectReference Include="..\SFTF.HelloWorldActor\SFTF.HelloWorldActor.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

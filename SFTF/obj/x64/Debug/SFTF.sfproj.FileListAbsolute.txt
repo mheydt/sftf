@@ -1,2 +1,3 @@
 d:\SFTF\SFTF\obj\x64\Debug\SFTF.sfprojResolveAssemblyReference.cache
 C:\Users\miheydt\Source\Repos\sftf\SFTF\obj\x64\Debug\SFTF.sfprojResolveAssemblyReference.cache
+C:\Dev\sftf\SFTF\obj\x64\Debug\SFTF.sfprojResolveAssemblyReference.cache
