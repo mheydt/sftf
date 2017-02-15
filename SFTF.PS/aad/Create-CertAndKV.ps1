@@ -28,6 +28,8 @@ $KeyVaultSecretName = "ServiceFabricSecret"
 #Path to directory on local disk in which the certificate is stored  
 $CertFileFullPath = "C:\Dev\sftf\SFTF.PS\$CertDNSName.pfx"
 
+Login-AzureRmAccount
+
 #If more than one under your account
 Select-AzureRmSubscription -SubscriptionId $subscriptionId
 #Verify Current Subscription

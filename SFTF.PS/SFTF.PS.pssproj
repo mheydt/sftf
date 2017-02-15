@@ -31,14 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="sf\azuredeploy-parameters.json" />
-    <Content Include="sf\azuredeploy.json" />
+    <Content Include="azuredeploy-parameters.json" />
+    <Content Include="azuredeploy.json" />
     <Content Include="misc\deploy-preview.sh" />
     <Content Include="misc\deploy.sh" />
     <Content Include="misc\deployer.rb" />
     <Content Include="misc\DeploymentHelper.cs" />
-    <Content Include="sf\parameters.json" />
-    <Content Include="sf\template.json" />
+    <Content Include="parameters.json" />
+    <Content Include="template.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="aad\common.ps1" />
@@ -46,9 +46,9 @@
     <Compile Include="aad\Do-SetupApplications.ps1" />
     <Compile Include="aad\Setup-Applications.ps1" />
     <Compile Include="certs\Create-Certificates.ps1" />
-    <Compile Include="sf\Create-KeyVault.ps1" />
+    <Compile Include="Create-KeyVault.ps1" />
     <Compile Include="aad\Create-ServicePrincipal1.ps1" />
-    <Compile Include="sf\Create-SvcFabCluster.ps1" />
+    <Compile Include="Create-SvcFabCluster.ps1" />
     <Compile Include="misc\deploy.ps1" />
     <Compile Include="aad\Get-AzureSubs.ps1" />
   </ItemGroup>

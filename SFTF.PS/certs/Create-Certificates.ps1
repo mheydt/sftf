@@ -2,7 +2,7 @@
 # Create_Certificates.ps1
 #
 
-$location = "C:\dev\sftf.ps"
+$location = "C:\dev\sftf"
 #$location = $currentLocation
 $dnsName = "foo.heydt.org"
 $certificateFilePath = "$location\$dnsName.pfx"
@@ -14,7 +14,7 @@ If (-not (Test-Path $certificateFilePath)){
     $newCer    | Export-PfxCertificate -FilePath $certificateFilePath -Password  $certificatePassword 
 
         
-    $newCer |Export-Certificate -FilePath $cerCertificateFilePath -Type CERT
+    $newCer | Export-Certificate -FilePath $cerCertificateFilePath -Type CERT
     ######## Set up the Certs
     #If this is a self signed cert, then add it to the Trusted People Store.Else skip.
     $importedCer = Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\TrustedPeople -FilePath $certificateFilePath -Password $certificatePassword

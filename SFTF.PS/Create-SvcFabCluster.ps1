@@ -136,7 +136,7 @@ $location = 'westus'
 $currentLocation = "c:\dev\SFTF\SFTF.PS"
 $yourResourceGroup = "sfhackrg"
 
-$dnsName = "sfhack" # $yourName # + $instanceNumber
+$dnsName = "sfhack2" # $yourName # + $instanceNumber
 $resourceGroupName = $yourResourceGroup # + $instanceNumber
 $deploymentName = "svcfabcluster-Initial"
 
