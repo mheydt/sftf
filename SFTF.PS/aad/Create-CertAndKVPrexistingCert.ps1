@@ -28,6 +28,10 @@ $KeyVaultSecretName = "ServiceFabricSecret"
 #Path to directory on local disk in which the certificate is stored  
 $CertFileFullPath = "C:\Dev\sftf\SFTF.PS\$CertDNSName.pfx"
 
+# this will use a pregenerated certificate file
+$SecurePassword = ConvertTo-SecureString -String $Password -AsPlainText -Force
+$NewCert = Import-PfxCertificate -Password $SecurePassword  -FilePath $CertFileFullPath -CertStoreLocation Cert:\LocalMachine\My
+
 Login-AzureRmAccount
 
 #If more than one under your account
@@ -44,7 +48,7 @@ New-AzureRmKeyVault -VaultName $KeyVaultName -ResourceGroupName $ResourceGroup -
 $SecurePassword = ConvertTo-SecureString -String $Password -AsPlainText -Force
 
 #Creates a new selfsigned cert and exports a pfx cert to a directory on disk
-$NewCert = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -DnsName $CertDNSName 
+#$NewCert = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -DnsName $CertDNSName 
 Export-PfxCertificate -FilePath $CertFileFullPath -Password $SecurePassword -Cert $NewCert
 Import-PfxCertificate -FilePath $CertFileFullPath -Password $SecurePassword -CertStoreLocation Cert:\LocalMachine\My 
 
