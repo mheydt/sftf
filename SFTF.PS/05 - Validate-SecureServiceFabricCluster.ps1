@@ -11,13 +11,22 @@ $clusterName = "mysfcluster1"
 $location = "westus"
 
 # Replace with the thumbprint of your certificate.  This is for mysfcluster1.pfx
-$certificateThumbprint = "C7F88BBF8DD2FA3BB461F11B3F6C8C7B67BA1FE0"
+$certificateThumbprint = "812508463AE35AF784956315D3414DF1854CF8A6"
+
+# Set the Subscription ID; needed if you have more than one - and you need to change to yours
+$subscriptionId = "b02264bc-1ea4-4849-abb9-60b5293ed558" 
+
+# Compute the cluster endpoint (note, change port here is you change the default in the parameters)
+$connectionEndpoint = "$clusterName.$location.cloudapp.azure.com:19000"
+
+Write-Host "Your connection endpoint is:"
+Write-Host $connectionEndpoint
 
 # Login to Azure
 Login-AzureRmAccount
 
-# Compute the cluster endpoint (note, change port here is you change the default in the parameters)
-$connectionEndpoint = "$clusterName.$location.cloudapp.azure.com:19000"
+# If more than one under your account, you need to specify the specific subscription id
+Select-AzureRmSubscription -SubscriptionId $subscriptionId
 
 # Try and connect to the cluster with all the info that we have
 Connect-serviceFabricCluster -ConnectionEndpoint $connectionEndpoint -KeepAliveIntervalInSec 10 `
@@ -31,7 +40,3 @@ Connect-serviceFabricCluster -ConnectionEndpoint $connectionEndpoint -KeepAliveI
 # Get cluster health and other checks    
 Get-ServiceFabricNode | Format-Table -AutoSize
 Get-ServiceFabricService fabric:/System | Format-Table -AutoSize
-
-# Print Connection details
-Write-Output "Connection Endpoint : $connectionEndpoint"
-Write-Output "Certificate Thumbprint : $certificateThumbprint"

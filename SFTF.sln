@@ -30,12 +30,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{C4B7AF
 		markdown\images\02_02_rg.png = markdown\images\02_02_rg.png
 		markdown\images\02_03_kv.png = markdown\images\02_03_kv.png
 		markdown\images\02_04.png = markdown\images\02_04.png
+		markdown\images\03_01.png = markdown\images\03_01.png
+		markdown\images\04-04.png = markdown\images\04-04.png
+		markdown\images\04_01.png = markdown\images\04_01.png
+		markdown\images\04_02.png = markdown\images\04_02.png
+		markdown\images\04_03.png = markdown\images\04_03.png
+		markdown\images\06_01.png = markdown\images\06_01.png
+		markdown\images\06_02.png = markdown\images\06_02.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Markdown", "Markdown", "{A5497F05-0B6A-4FE3-9D51-D945352D6D1C}"
 	ProjectSection(SolutionItems) = preProject
 		markdown\01.md = markdown\01.md
 		markdown\02.md = markdown\02.md
+		markdown\03.md = markdown\03.md
+		markdown\04.md = markdown\04.md
+		markdown\05.md = markdown\05.md
+		markdown\06.md = markdown\06.md
 	EndProjectSection
 EndProject
 Global

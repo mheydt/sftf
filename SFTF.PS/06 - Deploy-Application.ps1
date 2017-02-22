@@ -2,7 +2,7 @@
 Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\ServiceFabricSDK\ServiceFabricSDK.psm1"
 
 # Replace with the thumbprint of your certificate.  This is for mysfcluster1.pfx
-$certificateThumbprint = "C7F88BBF8DD2FA3BB461F11B3F6C8C7B67BA1FE0"
+$certificateThumbprint = "812508463AE35AF784956315D3414DF1854CF8A6"
 
 # A prepackaged app
 # Or you can use the solution app if you zip the pkg SFTF/pkg/Debug folder and change the extension to .sfpkg
@@ -10,6 +10,7 @@ $certificateThumbprint = "C7F88BBF8DD2FA3BB461F11B3F6C8C7B67BA1FE0"
 $packageFile = "$PSScriptRoot/pkg/WordCountV1.sfpkg"
 $applicationName = "fabric:/WordCount"
 
+# log into azure
 Login-AzureRmAccount
 
 Connect-serviceFabricCluster -ConnectionEndpoint $connectionEndpoint -KeepAliveIntervalInSec 10 `

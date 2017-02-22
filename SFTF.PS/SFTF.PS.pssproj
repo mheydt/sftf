@@ -44,11 +44,11 @@
     <Compile Include="03 - Add-KeyToKeyVault.ps1" />
     <Compile Include="02 - Create-KeyVault.ps1" />
     <Compile Include="01 - Create-SelfSignedCert.ps1" />
-    <Compile Include="04 - Create-ServiceFabricCluster.ps1" />
+    <Compile Include="04 - Create-SecureServiceFabricCluster.ps1" />
     <Compile Include="06 - Deploy-Application.ps1" />
     <Compile Include="templates\cluster1_parameters.json" />
     <Compile Include="templates\cluster1_template.json" />
-    <Compile Include="05 - Validate-ServiceFabricCluster.ps1" />
+    <Compile Include="05 - Validate-SecureServiceFabricCluster.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="certs\" />

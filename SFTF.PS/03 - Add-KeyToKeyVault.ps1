@@ -1,5 +1,5 @@
 #
-# Add_KeyToKeyVault.ps1
+# 03 - Add_KeyToKeyVault.ps1
 #
 # Adds a certificate to a key vault as a secret
 #
@@ -19,8 +19,14 @@ $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
 # Specify the name of the "secret" we are putting in Key Vault
 $keyVaultSecretName = "mySecretName"
 
+# Set the Subscription ID; needed if you have more than one - and you need to change to yours
+$subscriptionId = "b02264bc-1ea4-4849-abb9-60b5293ed558" 
+
 # Login to Azure
 Login-AzureRmAccount
+
+# If more than one under your account, you need to specify the specific subscription id
+Select-AzureRmSubscription -SubscriptionId $subscriptionId
 
 # read the certificate in and convert it to base64
 $base64 = [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes($certFileFullPath))
@@ -42,7 +48,6 @@ $secretValue = ConvertTo-SecureString -String $content -AsPlainText -Force
 $newSecret = Set-AzureKeyVaultSecret -VaultName $keyVaultName -Name $keyVaultSecretName -SecretValue $secretValue -Verbose
 
 # If you use this to create a secure Service Fabric cluster, you will need this info
-Write-Host
 Write-Host "Resource Id: "$(Get-AzureRmKeyVault -VaultName $keyVaultName).ResourceId
 Write-Host "Secret URL : "$newSecret.Id
 Write-Host "Thumbprint : "$newCert.Thumbprint
