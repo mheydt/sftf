@@ -30,5 +30,3 @@ New-AzureRmResourceGroup -Name $resourceGroup -Location $location
 
 # Now create the key vault
 New-AzureRmKeyVault -VaultName $keyVaultName -ResourceGroupName $resourceGroup -Location $location -sku standard -EnabledForDeployment 
-
-

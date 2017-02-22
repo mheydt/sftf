@@ -3,6 +3,11 @@ The SFTF.PS project now has 6 main scripts, each named after a specific task.  Y
 | Script | Purpose |
 | --- | --- |
 | [01 - Create-SelfSignedCert.ps1](markdown/01.md) | Creates a self signed certificate to use to secure the Service Fabric cluster |
+| [02 - CreateKeyVault.ps1](markdown/01.md) | Creates a new resource group and a key vault in that group |
+| [03 - Create-SelfSignedCert.ps1](markdown/01.md) | Creates a self signed certificate to use to secure the Service Fabric cluster |
+| [04 - Create-SelfSignedCert.ps1](markdown/01.md) | Creates a self signed certificate to use to secure the Service Fabric cluster |
+| [05 - Create-SelfSignedCert.ps1](markdown/01.md) | Creates a self signed certificate to use to secure the Service Fabric cluster |
+| [06 - Create-SelfSignedCert.ps1](markdown/01.md) | Creates a self signed certificate to use to secure the Service Fabric cluster |
 
 There are 6 self signed certificates available for your use the the _certs_ folder of the SFTF.PS project.  The following table outlines each and their respective thumbprint (you will need those):
 

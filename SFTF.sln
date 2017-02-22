@@ -26,7 +26,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{C4B7AF11-D0A2-4D8D-9DA5-15A18F393F01}"
 	ProjectSection(SolutionItems) = preProject
-		images\img0.png = images\img0.png
+		markdown\images\02_01_rg.png = markdown\images\02_01_rg.png
+		markdown\images\02_02_rg.png = markdown\images\02_02_rg.png
+		markdown\images\02_03_kv.png = markdown\images\02_03_kv.png
+		markdown\images\02_04.png = markdown\images\02_04.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Markdown", "Markdown", "{A5497F05-0B6A-4FE3-9D51-D945352D6D1C}"
@@ -82,5 +85,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4B7AF11-D0A2-4D8D-9DA5-15A18F393F01} = {A5497F05-0B6A-4FE3-9D51-D945352D6D1C}
 	EndGlobalSection
 EndGlobal
