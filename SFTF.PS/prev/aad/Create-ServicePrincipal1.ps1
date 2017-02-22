@@ -16,4 +16,4 @@ $yourPassword = "myPwd"
 $app = New-AzureRmADApplication -DisplayName $appName -HomePage $homePage -IdentifierUris $idUrl -Password $yourPassword
 New-AzureRmADServicePrincipal -ApplicationId $app.ApplicationId
 Start-Sleep 15
-New-AzureRmRoleAssBignment -RoleDefinitionName Reader -ServicePrincipalName $app.ApplicationId
+New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $app.ApplicationId

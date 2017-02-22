@@ -1,0 +1,75 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "clusterName": {
+            "value": "mysfcluster1"
+        },
+        "clusterLocation": {
+            "value": "westus"
+        },
+        "computeLocation": {
+            "value": "westus"
+        },
+        "adminUserName": {
+            "value": "fooUser"
+        },
+        "adminPassword": {
+            "value": "ADefaultPassword!1234"
+        },
+        "nicName": {
+            "value": "NIC-mysfcluster1"
+        },
+        "publicIPAddressName": {
+            "value": "mysfcluster1-PubIP"
+        },
+        "vmStorageAccountName": {
+            "value": "sfvmmysfcluster12810"
+        },
+        "dnsName": {
+            "value": "mysfcluster1"
+        },
+        "virtualNetworkName": {
+            "value": "VNet-mysfcluster1"
+        },
+        "lbName": {
+            "value": "LB-mysfcluster1"
+        },
+        "lbIPName": {
+            "value": "LBIP-mysfcluster1"
+        },
+        "applicationDiagnosticsStorageAccountName": {
+            "value": "sfdgmysfcluster17421"
+        },
+        "supportLogStorageAccountName": {
+            "value": "sflogsmysfcluster12904"
+        },
+        "sourceVaultValue": {
+            "value": "/subscriptions/b02264bc-1ea4-4849-abb9-60b5293ed558/resourceGroups/sfhack/providers/Microsoft.KeyVault/vaults/sfhackKV"
+        },
+        "certificateUrlValue": {
+            "value": "https://sfhackkv.vault.azure.net/secrets/mySecretName/85c37139b32742148848115d589f2188"
+        },
+        "certificateThumbprint": {
+            "value": "B99E3FCA7A6A8FED2956F5560DB6E6DD63336598"
+        },
+        "nt0ephemeralStartPort": {
+            "value": 49152
+        },
+        "nt0ephemeralEndPort": {
+            "value": 65534
+        },
+        "nt0applicationStartPort": {
+            "value": 20000
+        },
+        "nt0applicationEndPort": {
+            "value": 30000
+        },
+        "nt0fabricTcpGatewayPort": {
+            "value": 19000
+        },
+        "nt0fabricHttpGatewayPort": {
+            "value": 19080
+        }
+    }
+}

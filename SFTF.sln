@@ -19,14 +19,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFTF.HelloWorldActor.Interf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFTF.HelloWorldActor.CLI", "SFTF.HelloWorldActor.CLI\SFTF.HelloWorldActor.CLI.csproj", "{7EAC3B82-5F0A-435F-B95E-5F95B7A688BD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "certs", "certs", "{A1ECD472-D6A2-4DE9-B675-63CCF64A1E95}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F1B7486B-6BB6-4B39-86DB-239AF96441F3}"
 	ProjectSection(SolutionItems) = preProject
-		certs\sbuxspc.pfx = certs\sbuxspc.pfx
+		readme.md = readme.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50FBA7A1-F81E-46E7-A8AE-309098434279}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{C4B7AF11-D0A2-4D8D-9DA5-15A18F393F01}"
 	ProjectSection(SolutionItems) = preProject
-		certs\sbuxspc.pfx = certs\sbuxspc.pfx
+		images\img0.png = images\img0.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Markdown", "Markdown", "{A5497F05-0B6A-4FE3-9D51-D945352D6D1C}"
+	ProjectSection(SolutionItems) = preProject
+		markdown\01.md = markdown\01.md
+		markdown\02.md = markdown\02.md
 	EndProjectSection
 EndProject
 Global
