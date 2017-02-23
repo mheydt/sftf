@@ -37,6 +37,8 @@
     <Content Include="certs\mysfcluster4.pfx" />
     <Content Include="certs\mysfcluster5.pfx" />
     <Content Include="certs\mysfcluster6.pfx" />
+    <Content Include="Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
+    <Content Include="Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll" />
     <Content Include="pkg\WordCountV1.sfpkg" />
     <Content Include="pkg\WordCountV2.sfpkg" />
   </ItemGroup>
@@ -45,17 +47,31 @@
     <Compile Include="02 - Create-KeyVault.ps1" />
     <Compile Include="01 - Create-SelfSignedCert.ps1" />
     <Compile Include="04 - Create-SecureServiceFabricCluster.ps1" />
+    <Compile Include="08- Create-Users.ps1" />
+    <Compile Include="07 - Configure-AADForAuth.ps1" />
     <Compile Include="06 - Deploy-Application.ps1" />
+    <Compile Include="certs\mikeheydtsf.pfx" />
+    <Compile Include="graphapi\GraphAPICommon.ps1" />
+    <Compile Include="graphapi\SetupApplication.ps1" />
     <Compile Include="templates\cluster1_parameters.json" />
     <Compile Include="templates\cluster1_template.json" />
     <Compile Include="05 - Validate-SecureServiceFabricCluster.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="certs\" />
+    <Folder Include="graphapi\" />
     <Folder Include="prev\" />
     <Folder Include="prev\aad\" />
     <Folder Include="pkg\" />
     <Folder Include="templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.13.8.999, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Name>Microsoft.IdentityModel.Clients.ActiveDirectory</Name>
+      <AssemblyName>Microsoft.IdentityModel.Clients.ActiveDirectory.dll</AssemblyName>
+      <HintPath>graphapi\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />

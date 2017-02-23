@@ -8,7 +8,7 @@
 # The certificate that you want to add
 # Note that if you are going to use this as authentication to a Service Fabric cluster,
 # the DNS in the certificate must match the name of that cluster's FQDN
-$certFileFullPath = "$PSScriptRoot/certs/mysfcluster1.pfx"
+$certFileFullPath = "$PSScriptRoot/certs/mikeheydtsf.pfx"
 
 # Must specify a password for the certificate, same as when it was created
 $password = "TheCertsPassword!1234"
@@ -16,11 +16,17 @@ $password = "TheCertsPassword!1234"
 # Need to create a secure password object
 $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
 
+# Used for the naming of hte key vault
+$keyVaultName = "sfhackKV"
+
 # Specify the name of the "secret" we are putting in Key Vault
 $keyVaultSecretName = "mySecretName"
 
 # Set the Subscription ID; needed if you have more than one - and you need to change to yours
-$subscriptionId = "b02264bc-1ea4-4849-abb9-60b5293ed558" 
+$subscriptionId = "15b8ace7-90d7-4555-820a-acefe105886b" 
+
+# thumbprint for the cluster cert
+$certificateThumbprint = "DBA6805A125CBA9C3F090D457B2B51DFD57CCE84"
 
 # Login to Azure
 Login-AzureRmAccount

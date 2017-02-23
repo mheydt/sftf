@@ -54,3 +54,7 @@ C:\Dev\sftf\SFTF.HelloWorldActor.Interfaces\bin\x64\Debug\System.Fabric.xml
 C:\Dev\sftf\SFTF.HelloWorldActor.Interfaces\obj\x64\Debug\SFTF.HelloWorldActor.Interfaces.csprojResolveAssemblyReference.cache
 C:\Dev\sftf\SFTF.HelloWorldActor.Interfaces\obj\x64\Debug\SFTF.HelloWorldActor.Interfaces.dll
 C:\Dev\sftf\SFTF.HelloWorldActor.Interfaces\obj\x64\Debug\SFTF.HelloWorldActor.Interfaces.pdb
+D:\SFTF\SFTF.HelloWorldActor.Interfaces\bin\x64\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\SFTF\SFTF.HelloWorldActor.Interfaces\bin\x64\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+D:\SFTF\SFTF.HelloWorldActor.Interfaces\bin\x64\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+D:\SFTF\SFTF.HelloWorldActor.Interfaces\bin\x64\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml

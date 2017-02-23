@@ -9,7 +9,7 @@
 #
 
 # The name of your Service Fabric cluster
-$clusterName = "mysfcluster1"
+$clusterName = "mikeheydtsf"
 
 # Which region of azure?
 $location = "westus"
@@ -18,7 +18,7 @@ $location = "westus"
 $resourceGroupName = "sfhackRG"
 
 # Set the Subscription ID; needed if you have more than one - and you need to change to yours
-$subscriptionId = "b02264bc-1ea4-4849-abb9-60b5293ed558" 
+$subscriptionId = "15b8ace7-90d7-4555-820a-acefe105886b" 
 
 # Replace with your key vaults resource id
 $keyVaultResourceId = "/subscriptions/b02264bc-1ea4-4849-abb9-60b5293ed558/resourceGroups/sfhackRG/providers/Microsoft.KeyVault/vaults/sfhackKV"
@@ -27,8 +27,8 @@ $keyVaultResourceId = "/subscriptions/b02264bc-1ea4-4849-abb9-60b5293ed558/resou
 $keyVaultSecretId = "https://sfhackkv.vault.azure.net:443/secrets/mySecretName/2425d932d9bb442e8bdedba4b2ce8bc1"
 
 # Replace with the thumbprint of your certificate.  This is for mysfcluster1.pfx
-$certificateThumbprint = "812508463AE35AF784956315D3414DF1854CF8A6"
-
+#$certificateThumbprint = "812508463AE35AF784956315D3414DF1854CF8A6"
+$certificateThumbprint = "204EBB719457145C583F7C73A83C093A6FAB7CB5"
 # mysfcluster2.pfx
 # $certificateThumbprint = "015B7EA8023C0DEB2FE21280AE6F6425D0B557DC"
 # mysfcluster3.pfx

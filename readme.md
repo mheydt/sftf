@@ -1,4 +1,4 @@
-The SFTF.PS project now has 6 main scripts, each named after a specific task.  You can click on any of the script names in the following table to get instructions on each.
+The SFTF.PS project now has 7 main scripts, each named after a specific task.  You can click on any of the script names in the following table to get instructions on each.
 
 | Script | Purpose |
 | --- | --- |
@@ -8,6 +8,7 @@ The SFTF.PS project now has 6 main scripts, each named after a specific task.  Y
 | [04 - Create-SecureServiceFabricCluster.ps1](markdown/04.md) | Creates a self signed certificate to use to secure the Service Fabric cluster |
 | [05 - Create-Validate-SecureServiceFabricCluster.ps1](markdown/05.md) | Connects to your cluster to verify it is operational |
 | [06 - Deploy-Application.ps1](markdown/06.md) | Deploys an application to your cluster |
+| [07 - Configure-AADForAuth.ps1](markdown/07.md) | Configures apps and service principals to secure your cluster with AAD |
 
 There are 6 self signed certificates available for your use the the _certs_ folder of the SFTF.PS project.  The following table outlines each and their respective thumbprint (you will need those):
 

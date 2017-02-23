@@ -2,7 +2,7 @@
 # 02 - Create_KeyVault.ps1
 #
 # This script creates a new KeyVault in the specified resource group in the specified subscription.
-# Assumes resource group and keyvault do not already exist
+# Assumes resource group and key vault do not already exist
 #
 # Make sure your replace with your subscription id, and desired Key Vault Name and Resource Group Name (and location)
 #
@@ -14,7 +14,7 @@ $resourceGroup = "sfhackRG"
 $keyVaultName = "sfhackKV" 
 
 # Set the Subscription ID; needed if you have more than one - and you need to change to yours
-$subscriptionId = "b02264bc-1ea4-4849-abb9-60b5293ed558" 
+$subscriptionId = "15b8ace7-90d7-4555-820a-acefe105886b" 
 
 # Specify the region to locate the keyvault
 $location = "West US"

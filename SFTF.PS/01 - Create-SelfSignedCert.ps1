@@ -1,5 +1,5 @@
 #
-# 01 - Create_SelfSignedCert.ps1
+# Create_SelfSignedCert.ps1
 #
 # This script creates a self-signed certificate 
 #
@@ -9,7 +9,7 @@
 # DNS name for the certificate
 # If you are using this for service fabric, this must match the name of the service fabric cluster
 # that your are attempting to authenticate with
-$certDNSName = "mysfcluster1"
+$certDNSName = "mikeheydtsf"
 
 # This will be the name of the certificate file
 $certFileName = $certDNSName

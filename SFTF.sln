@@ -37,6 +37,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{C4B7AF
 		markdown\images\04_03.png = markdown\images\04_03.png
 		markdown\images\06_01.png = markdown\images\06_01.png
 		markdown\images\06_02.png = markdown\images\06_02.png
+		markdown\images\07_00.png = markdown\images\07_00.png
+		markdown\images\07_00a.png = markdown\images\07_00a.png
+		markdown\images\07_01.png = markdown\images\07_01.png
+		markdown\images\07_02.png = markdown\images\07_02.png
+		markdown\images\07_03.png = markdown\images\07_03.png
+		markdown\images\07_04.png = markdown\images\07_04.png
+		markdown\images\07_05.png = markdown\images\07_05.png
+		markdown\images\07_06.png = markdown\images\07_06.png
+		markdown\images\07_07.png = markdown\images\07_07.png
+		markdown\images\07_08.png = markdown\images\07_08.png
+		markdown\images\07_09.png = markdown\images\07_09.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Markdown", "Markdown", "{A5497F05-0B6A-4FE3-9D51-D945352D6D1C}"
@@ -47,6 +58,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Markdown", "Markdown", "{A5
 		markdown\04.md = markdown\04.md
 		markdown\05.md = markdown\05.md
 		markdown\06.md = markdown\06.md
+		markdown\07.md = markdown\07.md
 	EndProjectSection
 EndProject
 Global
