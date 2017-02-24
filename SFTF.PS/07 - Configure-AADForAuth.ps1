@@ -169,8 +169,7 @@ $webApp, $webAppPrincipal = CreateApplication $applicationsUri $principalsUri $h
 											  $webApplicationUri $webApplicationReplyUrl $webApplicationReplyUrl `
 											  $appRoles $oauth2Permissions `
 											  $null $null
-Write-Host 'Web application created: ' $webApp.appId
-Write-Host 'Web application roles: ' $webApp.appRoles
+Write-Host 'Cluster application created: ' $webApp.appId
 
 # Create Native Client Application AAD
 $requiredResourceAccess =
@@ -198,7 +197,7 @@ $nativeApp, $nativeAppPrincipal = CreateApplication $applicationsUri $principals
 													$null $null $nativeAppRedirectUrl `
 													$null $null `
 													$nativeAppResourceAccess "true"
-Write-Host 'Native application created: ' $nativeApp.appId
+Write-Host 'Client application created: ' $nativeApp.appId
 Write-Host $nativeApp.appRoles
 
 # Get the AAD service principal; we need this for performing OAuth grants
@@ -207,7 +206,7 @@ $aadServicePrincipal = (Invoke-RestMethod $aadPrincipalUri -Headers $headers)
 # Tell AAD which OAuth grants should be used in each application
 $grants1 = CreateOAuthPermissionGrants $oauthPermissionsGrantUri $headers $nativeAppPrincipal.objectId $aadServicePrincipal.value.objectId "User.Read"
 $grants2 = CreateOAuthPermissionGrants $oauthPermissionsGrantUri $headers $nativeAppPrincipal.objectId $webAppPrincipal.objectId "user_impersonation"
-<#
+
+# now create two users
 $clusterReader = CreateUser $userUri $headers $tenantID "cluster_reader" "Foo!1234" "Cluster Reader" "CR"
 $clusterAdmin = CreateUser $userUri $headers $tenantID "cluster_admin" "Bar!1234" "Cluster Admin" "CA"
-#>

@@ -47,12 +47,14 @@
     <Compile Include="02 - Create-KeyVault.ps1" />
     <Compile Include="01 - Create-SelfSignedCert.ps1" />
     <Compile Include="04 - Create-SecureServiceFabricCluster.ps1" />
-    <Compile Include="08- Create-Users.ps1" />
     <Compile Include="07 - Configure-AADForAuth.ps1" />
     <Compile Include="06 - Deploy-Application.ps1" />
     <Compile Include="certs\mikeheydtsf.pfx" />
+    <Compile Include="misc\common.ps1" />
     <Compile Include="graphapi\GraphAPICommon.ps1" />
     <Compile Include="graphapi\SetupApplication.ps1" />
+    <Compile Include="misc\misc.ps1" />
+    <Compile Include="misc\SetupApplications.ps1" />
     <Compile Include="templates\cluster1_parameters.json" />
     <Compile Include="templates\cluster1_template.json" />
     <Compile Include="05 - Validate-SecureServiceFabricCluster.ps1" />
@@ -60,6 +62,7 @@
   <ItemGroup>
     <Folder Include="certs\" />
     <Folder Include="graphapi\" />
+    <Folder Include="misc\" />
     <Folder Include="prev\" />
     <Folder Include="prev\aad\" />
     <Folder Include="pkg\" />
