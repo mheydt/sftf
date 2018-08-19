@@ -10,7 +10,7 @@ The SFTF.PS project now has 7 main scripts, each named after a specific task.  Y
 | [06 - Deploy-Application.ps1](markdown/06.md) | Deploys an application to your cluster |
 | [07 - Configure-AADForAuth.ps1](markdown/07.md) | Configures apps and service principals to secure your cluster with AAD |
 
-There are 6 self signed certificates available for your use the the _certs_ folder of the SFTF.PS project.  The following table outlines each and their respective thumbprint (you will need those):
+There are 6 self signed certificates available for your use in the _certs_ folder of the SFTF.PS project.  The following table outlines each and their respective thumbprint (you will need those):
 
 | Filename | Thumbprint |
 | --- | --- |
